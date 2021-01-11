@@ -35,7 +35,7 @@ void GameController::Run() {
         }
         switch (m_game->CurrentState()) {
           case GameState::Init:
-            if (event.key.code == sf::Keyboard::Enter)
+            if (event.key.code == sf::Keyboard::Return)
               m_game->SetState(GameState::Connect_IP);
             break;
           default:
@@ -68,7 +68,7 @@ void GameController::Run() {
       if (m_game->CurrentState() == GameState::Connect_Bttn) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
           m_game->SetState(GameState::Connect_IP);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
           m_game->SetState(GameState::Connecting);
           m_game->ConnectToServer();
         }
@@ -96,7 +96,7 @@ void GameController::Run() {
       if (m_game->CurrentState() == GameState::Login_Bttn) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
           m_game->SetState(GameState::Login_Name);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
           m_game->SetState(GameState::Login);
       }
     }
