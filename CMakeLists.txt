@@ -17,7 +17,9 @@ find_package(Boost COMPONENTS program_options thread REQUIRED)
 
 include_directories(${Boost_INCLUDE_DIRS})
 
-find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
+list(APPEND CMAKE_MODULE_PATH "/usr/share/SFML/cmake/Modules")
+
+find_package(SFML 2.4 COMPONENTS graphics audio REQUIRED)
 
 add_executable(gpacman_client main.cpp ${SOURCES} ${HEADERS})
 
